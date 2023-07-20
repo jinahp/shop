@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+
+#LoginForm {
+  font-size: 11pt;
+  font-family: "Nanum Gothic", sans-serif;
+  width: 50%;
+  min-width: 480px;
+
+  a {
+    margin-left: 5px;
+  }
+  span {
+    margin-bottom: 5px;
+  }
+  h1 {
+    color: #bca466;
+    text-align: center;
+  }
+
+  .form-control.oneCtr {
+    font-size: 1em;
+    color: black !important;
+    background-image: url(./img/email.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 30pt;
+    &:focus {
+      outline: 1px solid #bca466;
+    }
+  }
+
+  .form-control.twoCtr {
+    font-size: 1em;
+    background-image: url(./img/lock.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    padding-left: 30pt;
+    &:focus {
+      outline: 1px solid #bca466;
+    }
+  }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.input-form-box {
+  border: 0px solid #ff0000;
+  /* display: flex; */
+  margin-bottom: 5px;
+}
+.input-form-box > span {
+  display: block;
+  text-align: left;
+  padding-top: 5px;
+  min-width: 70px;
+  font-weight: bold;
+}
+.button-login-box {
+  margin: 10px 0;
+}
+
+#loginBoxTitle {
+  color: #000000;
+  font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+#inputBox {
+  margin: 5px;
+}
+
+#inputBox button {
+  padding: 3px 5px;
+  width: 100%;
+  border-style: none;
+  height: 30pt;
+  border-radius: 5px;
+  background-color: #bca466;
+  color: white;
+}
+
+.btn {
+  width: 100%;
+}
+
+label.error {
+  color: #bca466;
+  font-weight: 400;
+  font-size: 0.9em;
+}
