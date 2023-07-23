@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
-import greater from "../img/greater-than.svg";
-import { addItem } from "../store";
-import DetailOption from "./DetailOption";
-import "./detail.scss";
+import React, { useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
+import greater from '../img/greater-than.svg';
+import { addItem } from '../store';
+import DetailOption from './DetailOption';
+import './detail.scss';
 
 const Detail = ({ data, title, type }) => {
   const { id } = useParams();
@@ -28,8 +28,8 @@ const Detail = ({ data, title, type }) => {
       };
       dispatch(addItem(item));
     }
-    alert("장바구니에 추가되었습니다.");
-    navigate("/cart");
+    alert('장바구니에 추가되었습니다.');
+    navigate('/cart');
   };
 
   return (
@@ -77,7 +77,7 @@ const Detail = ({ data, title, type }) => {
 
             <p />
             <div class="Purchase">
-              <button id="buyBtn" onClick={() => navigate("/cart")}>
+              <button id="buyBtn" onClick={() => navigate('/cart')}>
                 구매하기
               </button>
               <button id="cartBtn" onClick={handleAddToCart}>

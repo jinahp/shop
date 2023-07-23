@@ -1,30 +1,30 @@
-import "./App.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import { useState } from "react";
-import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { useEffect, useState } from 'react';
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 // reactstrap CSS
-import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import Carousel from "./Carousel";
-import Detail from "./routes/Detail";
-import PlantDetail from "./routes/PlantDetail";
-import data from "./routes/data.json";
-import basketData from "./routes/basket.json";
-import magnifying from "./img/magnifying-glass-solid.svg";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
-import BoardList from "./BoardList";
-import Write from "./Write";
-import Cart from "./Cart";
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import Carousel from './Carousel';
+import Detail from './routes/Detail';
+import PlantDetail from './routes/PlantDetail';
+import data from './routes/data.json';
+import basketData from './routes/basket.json';
+import magnifying from './img/magnifying-glass-solid.svg';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
+import BoardList from './BoardList';
+import Write from './Write';
+import Cart from './Cart';
 
 function App() {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch("/api/hello")
+    fetch('/api/hello')
       .then((response) => response.text())
       .then((message) => {
         setMessage(message);
@@ -39,7 +39,7 @@ function App() {
     <List
       class="flower"
       {...item}
-      onClick={() => (window.location.href = "/bouquet/detail/:id")}
+      onClick={() => (window.location.href = '/bouquet/detail/:id')}
     />
   ));
 
@@ -48,7 +48,7 @@ function App() {
       class="basket"
       key={item.id}
       {...item}
-      onClick={() => (window.location.href = "/basket/detail/:id")}
+      onClick={() => (window.location.href = '/basket/detail/:id')}
     />
   ));
 
@@ -65,14 +65,14 @@ function App() {
             </Navbar.Brand>
             <Nav.Link
               onClick={() => {
-                navigate("/bouquet");
+                navigate('/bouquet');
               }}
             >
               꽃다발
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/basket");
+                navigate('/basket');
               }}
             >
               꽃바구니
@@ -89,28 +89,28 @@ function App() {
           <Nav className="me-auto2">
             <Nav.Link
               onClick={() => {
-                navigate("/login");
+                navigate('/login');
               }}
             >
               SIGN IN
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/join");
+                navigate('/join');
               }}
             >
               SIGN UP
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/qna");
+                navigate('/qna');
               }}
             >
               Q&A
             </Nav.Link>
             <Nav.Link
               onClick={() => {
-                navigate("/cart");
+                navigate('/cart');
               }}
             >
               CART
@@ -219,7 +219,7 @@ function List(props) {
         <img
           src={props.imageURL}
           class={props.class}
-          alt={props.class + ".jpg"}
+          alt={props.class + '.jpg'}
           width="50%"
         />
       </div>
@@ -242,7 +242,7 @@ function List2(props) {
         <img
           src={props.imageURL}
           class={props.class}
-          alt={props.class + ".jpg"}
+          alt={props.class + '.jpg'}
           width="50%"
         />
       </div>

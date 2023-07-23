@@ -1,5 +1,5 @@
-import React from "react";
-import "./loginForm.scss";
+import React from 'react';
+import './loginForm.scss';
 
 function LoginForm() {
   return (

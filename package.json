@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "format": "npx prettier --write .",
+    "start": "cd frontend && npm start"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  }
+}

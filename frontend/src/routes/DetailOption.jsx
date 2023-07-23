@@ -1,5 +1,5 @@
-import React, { useCallback } from "react";
-import "./detailOption.scss";
+import React, { useCallback } from 'react';
+import './detailOption.scss';
 
 function DetailOption({ name, price, optionMap, setOptionMap }) {
   const handleAmountChange = useCallback(
@@ -27,15 +27,15 @@ function DetailOption({ name, price, optionMap, setOptionMap }) {
 
   const handleOnChange = useCallback((e) => {
     const value = e.target.value;
-    if (value !== "") {
+    if (value !== '') {
       let optionPrice = 0;
-      if (value === "S") {
+      if (value === 'S') {
         optionPrice = 0;
-      } else if (value === "M") {
+      } else if (value === 'M') {
         optionPrice = 10000;
-      } else if (value === "L") {
+      } else if (value === 'L') {
         optionPrice = 20000;
-      } else if (value === "XL") {
+      } else if (value === 'XL') {
         optionPrice = 30000;
       }
       optionPrice += price;

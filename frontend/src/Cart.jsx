@@ -1,6 +1,6 @@
-import { Table } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, increase, decrease } from "./store";
+import { Table } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, increase, decrease } from './store';
 
 function Cart() {
   // Redux store 가져오기

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
-import { useParams } from "react-router-dom";
-import greater from "../img/greater-than.svg";
-import DetailOption from "./DetailOption";
-import "./detail.scss";
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import greater from '../img/greater-than.svg';
+import DetailOption from './DetailOption';
+import './detail.scss';
 
 // 장바구니 버튼
 function init() {
-  const btns = document.querySelectorAll("#cartBtn");
+  const btns = document.querySelectorAll('#cartBtn');
 
   for (let btn of btns) {
-    btn.addEventListener("click", handleCartBtn);
+    btn.addEventListener('click', handleCartBtn);
   }
 
   function handleCartBtn(event) {
     event.preventDefault(); // 버튼 클릭시 페이지 제일 상단으로 올라가는 것 방지
-    alert("장바구니에 추가되었습니다.");
+    alert('장바구니에 추가되었습니다.');
   }
 }
 
@@ -88,14 +88,14 @@ const PlantDetail = ({ plant }) => {
                 <button
                   id="buyBtn"
                   onClick={() =>
-                    (window.location.href = "https://www.apple.com/kr/")
+                    (window.location.href = 'https://www.apple.com/kr/')
                   }
                 >
                   BUY IT NOW
                 </button>
                 <button
                   id="cartBtn"
-                  onClick={() => (window.location.href = "")}
+                  onClick={() => (window.location.href = '')}
                 >
                   CART
                 </button>

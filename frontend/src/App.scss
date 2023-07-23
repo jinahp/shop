@@ -1,32 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 @font-face {
-  font-family: "SUITE-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
-    format("woff2");
+  font-family: 'SUITE-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2')
+    format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "TTTtangsbudaejjigaeB";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2")
-    format("woff2");
+  font-family: 'TTTtangsbudaejjigaeB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2')
+    format('woff2');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "GmarketSansMedium";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
-    format("woff");
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 .shop-bg {
   height: 200px;
-  background-image: url("img/flowershop5.jpg");
+  background-image: url('img/flowershop5.jpg');
   background-size: cover;
   background-position: top;
 }
@@ -35,7 +35,7 @@
   color: black;
   text-decoration-line: none;
   #name {
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     color: #000000;
     font-size: 10pt;
     letter-spacing: -0.5px;
@@ -55,7 +55,7 @@
   }
 
   #listPrice {
-    font-family: "Nanum Gothic", sans-serif;
+    font-family: 'Nanum Gothic', sans-serif;
     font-size: 10pt;
     letter-spacing: -0.5px;
     font-weight: 700;
@@ -88,7 +88,7 @@
 }
 
 .home {
-  font-family: "Black Ops One", cursive;
+  font-family: 'Black Ops One', cursive;
   font-weight: 500 !important;
   color: #69a181 !important;
   font-size: 14pt !important;
@@ -119,7 +119,7 @@
 }
 
 .navbar {
-  font-family: "GmarketSansMedium", sans-serif;
+  font-family: 'GmarketSansMedium', sans-serif;
   font-weight: normal;
   color: #000;
   font-size: 10pt;
