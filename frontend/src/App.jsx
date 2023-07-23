@@ -1,19 +1,16 @@
-import logo from "./logo.svg";
 import "./App.scss";
-import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 // reactstrap CSS
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "./Carousel";
-import Detail from "./routes/Detail.js";
-import PlantDetail from "./routes/PlantDetail.js";
-import { useParams } from "react-router-dom";
+import Detail from "./routes/Detail";
+import PlantDetail from "./routes/PlantDetail";
 import data from "./routes/data.json";
 import basketData from "./routes/basket.json";
 import magnifying from "./img/magnifying-glass-solid.svg";

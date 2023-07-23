@@ -1,11 +1,11 @@
-import { useHistory, useParams, useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import "./detail.scss";
-import greater from "../img/greater-than.svg";
+import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import DetailOption from "./DetailOption.js";
-import { useDispatch, useSelector } from "react-redux";
-import { addItem, increase, decrease } from "../store";
+import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import greater from "../img/greater-than.svg";
+import { addItem } from "../store";
+import DetailOption from "./DetailOption";
+import "./detail.scss";
 
 const Detail = ({ data, title, type }) => {
   const { id } = useParams();
@@ -13,7 +13,6 @@ const Detail = ({ data, title, type }) => {
 
   // 아이템에서 ID 찾기
   const selectItem = data.find((item) => item.id === id);
-  const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

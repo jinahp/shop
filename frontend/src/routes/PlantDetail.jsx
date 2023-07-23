@@ -1,11 +1,9 @@
-import { useHistory, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import plant from "./plant.json";
-import styled from "styled-components";
-import "./detail.scss";
-import greater from "../img/greater-than.svg";
 import { Container } from "react-bootstrap";
-import DetailOption from "./DetailOption.js";
+import { useParams } from "react-router-dom";
+import greater from "../img/greater-than.svg";
+import DetailOption from "./DetailOption";
+import "./detail.scss";
 
 // 장바구니 버튼
 function init() {
