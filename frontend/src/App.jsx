@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 // reactstrap CSS
 import React from 'react';
@@ -21,16 +21,6 @@ import Write from './Write';
 import Cart from './Cart';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((response) => response.text())
-      .then((message) => {
-        setMessage(message);
-      });
-  }, []);
-
   let [flower] = useState(data);
   let [basket] = useState(basketData);
   let navigate = useNavigate();
@@ -125,7 +115,6 @@ function App() {
           element={
             <div>
               <Carousel />
-              <h1 className="App-title">{message}</h1>
             </div>
           }
         />
@@ -163,15 +152,8 @@ function App() {
 
         <Route path="/login" element={<LoginForm />} />
         <Route path="/join" element={<SignUpForm />} />
-        <Route
-          path="/qna"
-          element={
-            <>
-              <BoardList />
-              <Write />
-            </>
-          }
-        />
+        <Route path="/qna" exact element={<BoardList />} />
+        <Route path="/write" element={<Write />} />
         <Route path="/cart" element={<Cart />} />
 
         <Route path="*" element={<div>404 페이지</div>} />

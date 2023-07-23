@@ -92,9 +92,10 @@
     display: flex;
     float: right;
     margin-right: 10px;
+    margin-top: 10px;
     .money.title-b {
-      font-size: 12pt;
       padding-top: 4px;
+      font-size: 12pt;
       color: #222;
     }
     .totalPrice {
@@ -106,8 +107,10 @@
     }
   }
   .money3 {
-    padding: 3px 1px 3px 5px;
+    padding: 3px 1px 3px 9px;
     font-weight: 700;
     font-size: 12pt;
+    display: inline-block;
+    width: 80px;
   }
 }

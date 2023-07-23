@@ -1,11 +1,13 @@
+import React from 'react';
 import { Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem, increase, decrease } from './store';
 
 function Cart() {
   // Redux store 가져오기
-  let state = useSelector((state) => state.cart);
-  let dispatch = useDispatch(); // Store.js로 요청 보내주는 함수
+  const state = useSelector((state) => state.cart);
+  const dispatch = useDispatch(); // Store.js로 요청 보내주는 함수
+  const allItems = [...state.basket, ...state.bouquet];
 
   return (
     <Table>
@@ -18,11 +20,11 @@ function Cart() {
         </tr>
       </thead>
       <tbody>
-        {state.bouquet.map((item, i) => (
+        {allItems.map((item, i) => (
           <tr key={item.id}>
-            <td>{item.id}</td>
+            <td>{i + 1}</td>
             <td>{item.name}</td>
-            <td>{item.count ?? 0}</td>
+            <td>{item.option.count ?? 0}</td>
             <td>
               <button
                 onClick={() => {
@@ -33,32 +35,7 @@ function Cart() {
               </button>
               <button
                 onClick={() => {
-                  if (item.count > 0) {
-                    dispatch(decrease(item));
-                  }
-                }}
-              >
-                -
-              </button>
-            </td>
-          </tr>
-        ))}
-        {state.basket.map((item, i) => (
-          <tr key={item.id}>
-            <td>{item.id}</td>
-            <td>{item.name}</td>
-            <td>{item.count ?? 0}</td>
-            <td>
-              <button
-                onClick={() => {
-                  dispatch(increase(item));
-                }}
-              >
-                +
-              </button>
-              <button
-                onClick={() => {
-                  if (item.count > 0) {
+                  if (item.option.count > 0) {
                     dispatch(decrease(item));
                   }
                 }}

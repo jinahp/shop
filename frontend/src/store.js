@@ -5,18 +5,25 @@ const cartSlice = createSlice({
   initialState: { bouquet: [], basket: [] },
   reducers: {
     addItem: (state, action) => {
-      const { type, ...payload } = action;
-      state[type].push(payload);
+      const { payload } = action;
+      console.log({ payload });
+      state[payload.type].push(payload);
     },
     increase: (state, action) => {
-      const { type, ...payload } = action;
-      const index = state[type].findIndex((item) => item.id === payload.id);
-      state[type][index].count++;
+      const { payload } = action;
+      const { id, option, type } = payload;
+      const index = state[type].findIndex(
+        (item) => item.id === id && item.option.value == option.value
+      );
+      state[type][index].option.count++;
     },
     decrease: (state, action) => {
-      const { type, ...payload } = action;
-      const index = state[type].findIndex((item) => item.id === payload.id);
-      state[type][index].count--;
+      const { payload } = action;
+      const { id, option, type } = payload;
+      const index = state[type].findIndex(
+        (item) => item.id === id && item.option.value == option.value
+      );
+      state[type][index].option.count--;
     },
   },
 });

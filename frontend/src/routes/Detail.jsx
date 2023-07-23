@@ -23,8 +23,7 @@ const Detail = ({ data, title, type }) => {
         id,
         type,
         name: `${selectItem.name} (${option.value})`,
-        price: option.price,
-        count: option.count,
+        option,
       };
       dispatch(addItem(item));
     }
@@ -77,7 +76,7 @@ const Detail = ({ data, title, type }) => {
 
             <p />
             <div class="Purchase">
-              <button id="buyBtn" onClick={() => navigate('/cart')}>
+              <button id="buyBtn" onClick={handleAddToCart}>
                 구매하기
               </button>
               <button id="cartBtn" onClick={handleAddToCart}>
