@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.boardListForm {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 11pt;
+  h1 {
+    color: #69a181;
+    text-align: center;
+    font-weight: bold;
+    margin: 15pt 0;
+  }
+
+  .boardTable {
+    margin: 0 auto;
+    width: 85%;
+    button {
+      width: 50px;
+      font-size: 11pt;
+      margin: 1em 0.3em;
+      border-style: none;
+      height: 25pt;
+      border-radius: 5px;
+      background-color: #e1e4be;
+      color: black;
+    }
+    button:hover,
+    button:focus {
+      background-color: #f5f5eb !important;
+      color: black;
+      transition: all ease 0.5s 0s;
+      box-shadow: inset 0 0 0 2em var(--hover);
+    }
+    a {
+      color: #000;
+    }
+  }
+  tr {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .qnaButtons {
+    display: flex;
+    justify-content: right;
+    margin-right: 8em;
+    button {
+      width: 80px;
+      font-size: 11pt;
+      margin: 1em 0.3em;
+      border-style: none;
+      height: 25pt;
+      border-radius: 5px;
+      background-color: #69a181 !important;
+      color: white;
+    }
+    button:hover,
+    button:focus {
+      background-color: #aec7b9 !important;
+      color: white;
+      transition: all ease 0.5s 0s;
+      box-shadow: inset 0 0 0 2em var(--hover);
+    }
+  }
+}

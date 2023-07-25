@@ -1,14 +1,8 @@
-@font-face {
-  font-family: 'TheJamsil1Thin';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil1Thin.woff2')
-    format('woff2');
-  font-weight: 100;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 .signUpForm {
   font-size: 11pt;
-  font-family: 'TheJamsil1Thin', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   position: relative;
   display: flex;
 
@@ -16,6 +10,7 @@
     color: #69a181;
     text-align: center;
     font-weight: bold;
+    margin: 15pt;
   }
 
   .container {

@@ -1,24 +1,20 @@
-import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useState } from 'react';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
-// reactstrap CSS
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
+import './App.scss';
 import Carousel from './Carousel';
-import Detail from './routes/Detail';
-import PlantDetail from './routes/PlantDetail';
-import data from './routes/data.json';
-import basketData from './routes/basket.json';
-import magnifying from './img/magnifying-glass-solid.svg';
+import Cart from './Cart';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
-import BoardList from './BoardList';
-import Write from './Write';
-import Cart from './Cart';
+import magnifying from './img/magnifying-glass-solid.svg';
+import { BoardList, Write } from './qna';
+import Detail from './routes/Detail';
+import PlantDetail from './routes/PlantDetail';
+import basketData from './routes/basket.json';
+import data from './routes/data.json';
 
 function App() {
   let [flower] = useState(data);
