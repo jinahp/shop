@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+h1 {
+  flex: 100%;
+  color: #69a181;
+  text-align: center;
+  font-weight: bold;
+  margin: 0.5em 0 1.5em 0;
+}
+
+.closeBtn {
+  width: 10em;
+  font-size: 11pt;
+  border-style: none;
+  height: 3.1em;
+  border-radius: 5px;
+  background-color: #e1e4be;
+  color: black;
+  margin: 0 0 0 0.5em;
+}
+
+.orderForm {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 11pt;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2em 7em;
+  table {
+    margin-top: 2em;
+    border-radius: 10px;
+    width: 400px;
+    height: 100px;
+    table-layout: fixed;
+    text-align: center;
+    th,
+    td {
+      padding: 0.5em 0;
+      width: 150px;
+    }
+  }
+
+  label {
+    padding: 5pt 0;
+    width: 60px;
+  }
+  img {
+    border-radius: 10px;
+    width: 150px;
+  }
+
+  input {
+    border-radius: 5px;
+    border: solid 1px #69a181;
+    margin-left: 0.5em;
+    width: 21em;
+    padding: 0.5em;
+  }
+  .itemBox {
+    display: flex;
+  }
+  .orderBox {
+    width: 600px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 1em 1em 1em 1em;
+    line-height: 2em;
+    display: inline-block;
+  }
+  .gap {
+    display: grid;
+    gap: 1em;
+  }
+  .personalInfo {
+    font-size: 11pt;
+    padding: 5pt 0;
+    display: flex;
+    flex-direction: column;
+    .personalInfo.title {
+      color: white;
+      font-size: 15pt;
+      background-color: #69a181;
+      border-radius: 5px;
+      padding: 5pt;
+      text-align: center;
+      width: 7em;
+      margin: 0 auto; // width 줬을 때 margin 0 auto 쓸 수 있음!
+    }
+  }
+
+  .addressBox {
+    display: flex;
+    button {
+      @extend .closeBtn;
+    }
+  }
+
+  #postBox {
+    position: relative;
+    top: 1em;
+  }
+
+  .totalBtnBox {
+    display: flex;
+    justify-content: flex-end;
+    color: #3d7c58;
+    align-items: center;
+    gap: 0.3em;
+    #totalPriceOrder {
+      text-align: right;
+      font-size: 14pt;
+      font-weight: 700;
+      #deliveryFree {
+        font-size: 11pt;
+        color: gray;
+      }
+    }
+    button {
+      width: 10em;
+      font-size: 12pt;
+      margin: 1em 0.3em;
+      border-style: none;
+      height: 4em;
+      border-radius: 5px;
+      background-color: #69a181;
+      color: white;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #98b4a5 !important;
+      color: white;
+      transition: all ease 0.5s 0s;
+      box-shadow: inset 0 0 0 2em var(--hover);
+    }
+  }
+}

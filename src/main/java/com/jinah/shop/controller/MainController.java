@@ -2,10 +2,9 @@ package com.jinah.shop.controller;
 
 import com.jinah.shop.dao.DaoMapper;
 import com.jinah.shop.dto.DTO;
+import com.jinah.shop.dto.OrderDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -33,5 +32,8 @@ public class MainController {
         dto.setWriter(dto.getWriter().trim());
         dto.setWriteDate(now);
         mapper.write(dto);
+    }
+    @PostMapping("/api/order")
+    public void order(OrderDTO dto) {
     }
 }

@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import greater from '../img/greater-than.svg';
-import { addItem } from '../store';
+import { addItem, resetCart } from '../store';
 import DetailOption from './DetailOption';
 import './detail.scss';
 
@@ -24,11 +24,29 @@ const Detail = ({ data, title, type }) => {
         type,
         name: `${selectItem.name} (${option.value})`,
         option,
+        imageURL: selectItem.imageURL,
       };
       dispatch(addItem(item));
     }
     alert('장바구니에 추가되었습니다.');
     navigate('/cart');
+  };
+
+  const handleAddToOrder = () => {
+    dispatch(resetCart());
+    const options = Object.values(optionMap);
+    for (const option of options) {
+      const item = {
+        id,
+        type,
+        name: `${selectItem.name} (${option.value})`,
+        option,
+        imageURL: selectItem.imageURL,
+      };
+      dispatch(addItem(item));
+    }
+    alert('구매화면으로 넘어갑니다.');
+    navigate('/order');
   };
 
   return (
@@ -76,7 +94,7 @@ const Detail = ({ data, title, type }) => {
 
             <p />
             <div class="Purchase">
-              <button id="buyBtn" onClick={handleAddToCart}>
+              <button id="buyBtn" onClick={handleAddToOrder}>
                 구매하기
               </button>
               <button id="cartBtn" onClick={handleAddToCart}>
