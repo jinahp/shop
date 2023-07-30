@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import './App.scss';
 import Carousel from './Carousel';
@@ -15,6 +16,7 @@ import Detail from './routes/Detail';
 import PlantDetail from './routes/PlantDetail';
 import basketData from './routes/basket.json';
 import data from './routes/data.json';
+import { logout } from './store';
 
 function App() {
   let [flower] = useState(data);
@@ -38,11 +40,15 @@ function App() {
     />
   ));
 
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
+
   return (
     <div className="App">
-      {/* 대문자로 시작하면 다 컴포넌트인데 컴포넌트를 import 해와야 한다. */}
-      {/* <Button variant="primary">Primary</Button>{" "} */}
-
       <Navbar bg="gray" variant="light">
         <Container>
           <Nav className="me-auto">
@@ -73,13 +79,17 @@ function App() {
             </form>
           </div>
           <Nav className="me-auto2">
-            <Nav.Link
-              onClick={() => {
-                navigate('/login');
-              }}
-            >
-              SIGN IN
-            </Nav.Link>
+            {isLoggedIn ? (
+              <Nav.Link onClick={handleLogout}>LOGOUT</Nav.Link>
+            ) : (
+              <Nav.Link
+                onClick={() => {
+                  navigate('/login');
+                }}
+              >
+                SIGN IN
+              </Nav.Link>
+            )}
             <Nav.Link
               onClick={() => {
                 navigate('/join');
@@ -163,6 +173,7 @@ function App() {
           <Route path="one" element={<div>첫 주문시 무료배송</div>} />
           <Route path="two" element={<div>생일 기념 20% 할인 쿠폰 증정</div>} />
         </Route>
+        <Route path="/board" component={BoardList} />
       </Routes>
     </div>
   );
@@ -172,7 +183,7 @@ function EventPage() {
   return (
     <div>
       <h4>오늘의 이벤트</h4>
-      <Outlet></Outlet>
+      <Outlet />
     </div>
   );
 }
@@ -181,7 +192,7 @@ function Search() {
   return (
     <div>
       <h4>검색 결과</h4>
-      <Outlet></Outlet>
+      <Outlet />
     </div>
   );
 }

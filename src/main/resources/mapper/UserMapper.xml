@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jinah.shop.dao.UserMapper">
+
+    <!-- Create -->
+    <insert id="insertUser">
+        INSERT INTO user_table (mb_name, mb_pwd, email)
+        VALUES (#{mb_name}, #{mb_pwd}, #{email})
+    </insert>
+
+    <!-- Read -->
+    <select id="getUserByEmail">
+        SELECT * FROM user_table WHERE email = #{email}
+    </select>
+
+    <select id="getUserById">
+        SELECT * FROM user_table WHERE num = #{num}
+    </select>
+
+    <select id="getAllUsers">
+        SELECT * FROM user_table
+    </select>
+
+    <!-- Update -->
+    <update id="updateUser" parameterType="com.jinah.shop.dto.SiteUser">
+        UPDATE user_table
+        SET mb_name = #{mb_name}, mb_pwd = #{mb_pwd}, email = #{email}
+        WHERE num = #{num}
+    </update>
+
+    <!-- Delete -->
+    <delete id="deleteUserById" parameterType="int">
+        DELETE FROM user_table WHERE num = #{num}
+    </delete>
+
+</mapper>
