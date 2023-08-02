@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-.writeBox {
+.viewBox {
   font-family: 'Nanum Gothic', sans-serif;
   justify-content: center;
   font-size: 11pt;
@@ -11,14 +11,28 @@
     font-weight: bold;
     margin: 15pt 0;
   }
-  .writeForm {
+
+  .table {
+    margin: 0 auto;
+    width: 85%;
+    align-items: center;
+    justify-items: center;
+    .titleBold {
+      font-weight: bold;
+    }
+  }
+  tr {
+    height: 50pt;
+    vertical-align: middle;
+  }
+  .viewForm {
     margin: 0 auto;
     width: 85%;
     align-items: center;
     justify-items: center;
   }
 
-  .writeButtons {
+  .viewButtons {
     display: flex;
     justify-content: center;
     button {

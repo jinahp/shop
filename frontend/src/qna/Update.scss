@@ -1,24 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
-.writeBox {
+.updateBox {
   font-family: 'Nanum Gothic', sans-serif;
   justify-content: center;
   font-size: 11pt;
-  h1 {
-    flex: 100%;
-    color: #69a181;
-    text-align: center;
-    font-weight: bold;
-    margin: 15pt 0;
-  }
-  .writeForm {
+
+  .updateForm {
     margin: 0 auto;
     width: 85%;
     align-items: center;
     justify-items: center;
   }
 
-  .writeButtons {
+  .updateButtons {
     display: flex;
     justify-content: center;
     button {

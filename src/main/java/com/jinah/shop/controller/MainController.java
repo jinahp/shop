@@ -33,6 +33,35 @@ public class MainController {
         dto.setWriteDate(now);
         mapper.write(dto);
     }
+
+    // Controller to update an item
+    @PutMapping("/api/dao/{num}")
+    public void updateItem(@PathVariable("num") Long num, @RequestBody DTO dto) {
+        // Fetch the existing item from the database
+        DTO existingDTO = mapper.getDTOByNum(num);
+        if (existingDTO != null) {
+            existingDTO.setTitle(dto.getTitle());
+            existingDTO.setWriter(dto.getWriter());
+            existingDTO.setWriteDate(dto.getWriteDate());
+            existingDTO.setContent(dto.getContent());
+
+            mapper.updateItem(num, existingDTO);
+        } else {
+            throw new RuntimeException("게시물을 찾을 수 없습니다.");
+        }
+    }
+
+    @GetMapping("/api/dao/{num}") // 새로운 API 엔드포인트 추가
+    public DTO getDTOByNum(@PathVariable("num") Long num) {
+        return mapper.getDTOByNum(num);
+    }
+
+    // Controller to delete an item
+    @DeleteMapping("/api/dao/{id}")
+    public void deleteItem(@PathVariable("id") Long id) {
+        mapper.deleteItem(id);
+    }
+
     @PostMapping("/api/order")
     public void order(OrderDTO dto) {
     }

@@ -12,7 +12,7 @@ import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 import magnifying from './img/magnifying-glass-solid.svg';
 import OrderPage from './order/OrderPage';
-import { BoardList, Write } from './qna';
+import { BoardList, Update, View, Write } from './qna';
 import Detail from './routes/Detail';
 import PlantDetail from './routes/PlantDetail';
 import basketData from './routes/basket.json';
@@ -160,6 +160,8 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/join" element={<SignUpForm />} />
         <Route path="/qna" exact element={<BoardList />} />
+        <Route path="/update/:id" element={<Update />} />
+        <Route path="/view/:id" element={<View />} />
         <Route path="/write" element={<Write />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<OrderPage />} />

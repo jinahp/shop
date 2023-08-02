@@ -41,6 +41,7 @@ function Write() {
 
   return (
     <div className="writeBox">
+      <h1>글쓰기</h1>
       <Form onSubmit={onSubmit}>
         <Form.Group
           className="mb-3 writeForm"

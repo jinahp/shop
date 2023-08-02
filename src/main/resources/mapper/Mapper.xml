@@ -1,10 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.jinah.shop.dao.DaoMapper" >
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jinah.shop.dao.DaoMapper">
     <select id="listAll" resultType="com.jinah.shop.dto.DTO">
-        select * from shop_table
+        SELECT * FROM shop_table
     </select>
     <insert id="write">
-        INSERT INTO shop_table (NUM, TITLE, WRITER, WRITEDATE) VALUES (#{num}, #{title}, #{writer}, #{writeDate})
+        INSERT INTO shop_table (num, title, content, writer, writedate) VALUES (#{num}, #{title}, #{content}, #{writer}, #{writeDate})
     </insert>
+    <update id="updateItem">
+        UPDATE shop_table
+        SET title = #{dto.title},
+        content = #{dto.content},
+        writer = #{dto.writer},
+        writeDate = #{dto.writeDate}
+        WHERE num = #{num}
+    </update>
+    <delete id="deleteItem">
+        DELETE FROM shop_table WHERE num = #{num} <!-- id 대신 num을 사용하도록 변경 -->
+    </delete>
+    <select id="getDTOById" resultType="com.jinah.shop.dto.DTO">
+        SELECT * FROM shop_table WHERE num = #{num}
+    </select>
+    <select id="getDTOByNum" resultType="com.jinah.shop.dto.DTO"> <!-- 새로 추가한 엔드포인트에 대한 쿼리 -->
+        SELECT * FROM shop_table WHERE num = #{num}
+    </select>
+
 </mapper>
