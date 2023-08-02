@@ -14,7 +14,6 @@ import magnifying from './img/magnifying-glass-solid.svg';
 import OrderPage from './order/OrderPage';
 import { BoardList, Update, View, Write } from './qna';
 import Detail from './routes/Detail';
-import PlantDetail from './routes/PlantDetail';
 import basketData from './routes/basket.json';
 import data from './routes/data.json';
 import { logout } from './store';
@@ -203,11 +202,7 @@ function Search() {
 
 function List(props) {
   return (
-    <Link
-      to={`/bouquet/detail/${props.id}`}
-      element={<PlantDetail />}
-      class="col-md-4"
-    >
+    <Link to={`/bouquet/detail/${props.id}`} class="col-md-4">
       <div>
         <img
           src={props.imageURL}
@@ -226,11 +221,7 @@ function List(props) {
 
 function List2(props) {
   return (
-    <Link
-      to={`/basket/detail/${props.id}`}
-      element={<Detail />}
-      class="col-md-4"
-    >
+    <Link to={`/basket/detail/${props.id}`} class="col-md-4">
       <div>
         <img
           src={props.imageURL}

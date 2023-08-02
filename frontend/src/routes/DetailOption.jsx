@@ -69,10 +69,10 @@ function DetailOption({ name, price, optionMap, setOptionMap }) {
       <strong className="delivery title-t">옵션 선택</strong>
       <select id="user-option" onChange={handleOnChange}>
         <option value="">사이즈를 선택해주세요.</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
+        <option value="S">S(+0원)</option>
+        <option value="M">M(+10,000원)</option>
+        <option value="L">L(+20,000원)</option>
+        <option value="XL">XL(+30,000원)</option>
       </select>
       <div id="optionContainer">
         {Object.entries(optionMap).map(([optionValue, option]) => (
