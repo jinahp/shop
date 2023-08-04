@@ -9,6 +9,7 @@ import './App.scss';
 import Carousel from './Carousel';
 import Cart from './Cart';
 import LoginForm from './LoginForm';
+import SearchResult from './SearchResult';
 import SignUpForm from './SignUpForm';
 import magnifying from './img/magnifying-glass-solid.svg';
 import OrderPage from './order/OrderPage';
@@ -22,6 +23,19 @@ function App() {
   let [flower] = useState(data);
   let [basket] = useState(basketData);
   let navigate = useNavigate();
+
+  const [searchResults, setSearchResults] = useState([]);
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const searchTerm = event.target.elements.searchResult.value.toLowerCase();
+    const results = flower.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm)
+    );
+    console.log({ results });
+    setSearchResults(results);
+    navigate('/search');
+  };
 
   const list = data.map((item) => (
     <List
@@ -71,10 +85,15 @@ function App() {
             </Nav.Link>
           </Nav>
           <div class="searchBar">
-            <form action="./search" id="searchForm">
+            <form onSubmit={handleSearch} id="searchForm">
               <input id="searchResult" type="text" placeholder="Search" />
-              <button id="btnClick" onClick={Search}>
-                <img src={magnifying} id="searchIcon" width="18pt" />
+              <button id="btnClick" type="submit">
+                <img
+                  src={magnifying}
+                  id="searchIcon"
+                  width="18pt"
+                  alt="Search"
+                />
               </button>
             </form>
           </div>
@@ -167,7 +186,10 @@ function App() {
 
         <Route path="*" element={<div>404 페이지</div>} />
 
-        <Route path="/search" element={<Search />}>
+        <Route
+          path="/search"
+          element={<SearchResult searchResults={searchResults} />}
+        >
           <Route path="history" element={<div>검색 기록</div>} />
           <Route path="settings" element={<div>검색 설정</div>} />
         </Route>
@@ -203,18 +225,20 @@ function Search() {
 function List(props) {
   return (
     <Link to={`/bouquet/detail/${props.id}`} class="col-md-4">
-      <div>
-        <img
-          src={props.imageURL}
-          class={props.class}
-          alt={props.class + '.jpg'}
-          width="50%"
-        />
+      <div class="listBox">
+        <div>
+          <img
+            src={props.imageURL}
+            class={props.class}
+            alt={props.class + '.jpg'}
+            width="50%"
+          />
+        </div>
+        <div id="name">{props.name}</div>
+        <div>{props.content}</div>
+        <div id="listPrice">{props.price.toLocaleString()}원</div>
+        <span id="delivery">무료배송</span>
       </div>
-      <div id="name">{props.name}</div>
-      <div>{props.content}</div>
-      <div id="listPrice">{props.price.toLocaleString()}원</div>
-      <span id="delivery">무료배송</span>
     </Link>
   );
 }
